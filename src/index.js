@@ -5,13 +5,16 @@ import RouterProvider from "./providers/router-provider";
 import ThemeProvider from "./providers/theme-provider";
 import reportWebVitals from "./reportWebVitals";
 import ErrorBoundary from "./providers/error-boundary";
+import NetworkProvider from "./providers/network-provider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ThemeProvider>
       <ErrorBoundary>
-        <RouterProvider />
+        <NetworkProvider>
+          <RouterProvider />
+        </NetworkProvider>
       </ErrorBoundary>
     </ThemeProvider>
   </React.StrictMode>

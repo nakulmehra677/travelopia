@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 import * as React from "react";
-import { IconButton } from "@mui/material";
+import { IconButton, Tooltip } from "@mui/material";
 
 export default function Header() {
   return (
@@ -16,9 +16,11 @@ export default function Header() {
             My Flight App
           </Typography>
 
-          <IconButton size="large" edge="start" color="inherit">
-            <AccountCircleIcon />
-          </IconButton>
+          <Tooltip title="Profile">
+            <IconButton size="large" edge="start" color="inherit">
+              <AccountCircleIcon />
+            </IconButton>
+          </Tooltip>
         </Toolbar>
       </AppBar>
       <Toolbar />
