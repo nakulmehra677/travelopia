@@ -1,4 +1,11 @@
-import { Card, CardContent, Skeleton, Stack, Typography } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Divider,
+  Skeleton,
+  Stack,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -21,12 +28,9 @@ function CardFlightDetails({ data, isLoading, error }) {
     if (isLoading) {
       return (
         <Stack spacing={2} id="flight-details-loading">
-          <Skeleton variant="rectangular" height={32} />
-          <Skeleton variant="rectangular" height={32} />
-          <Skeleton variant="rectangular" height={32} />
-          <Skeleton variant="rectangular" height={32} />
-          <Skeleton variant="rectangular" height={32} />
-          <Skeleton variant="rectangular" height={32} />
+          {[1, 2, 3, 4, 5, 6].map((item) => (
+            <Skeleton variant="rectangular" height={32} key={item} />
+          ))}
         </Stack>
       );
     }
@@ -60,25 +64,35 @@ function CardFlightDetails({ data, isLoading, error }) {
             <Value>{flightNumber}</Value>
           </Stack>
 
+          <Divider />
+
           <Stack direction="row" justifyContent="space-between" spacing={4}>
             <Label>Airline</Label>
             <Value>{airline}</Value>
           </Stack>
+
+          <Divider />
 
           <Stack direction="row" justifyContent="space-between" spacing={4}>
             <Label>Origin</Label>
             <Value>{origin}</Value>
           </Stack>
 
+          <Divider />
+
           <Stack direction="row" justifyContent="space-between" spacing={4}>
             <Label>Destination</Label>
             <Value>{destination}</Value>
           </Stack>
 
+          <Divider />
+
           <Stack direction="row" justifyContent="space-between" spacing={4}>
             <Label>Departure Time</Label>
             <Value>{new Date(departureTime).toLocaleString()}</Value>
           </Stack>
+
+          <Divider />
 
           <Stack direction="row" justifyContent="space-between" spacing={4}>
             <Label>Status</Label>
