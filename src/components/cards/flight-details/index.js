@@ -105,7 +105,14 @@ function CardFlightDetails({ data, isLoading, error }) {
 
   return (
     <Card sx={{ width: "100%" }}>
-      <CardContent>{ui()}</CardContent>
+      <CardContent>
+        <Stack spacing={4}>
+          <Typography variant="h1" textAlign="center">
+            Flight Details
+          </Typography>
+          {ui()}
+        </Stack>
+      </CardContent>
     </Card>
   );
 }

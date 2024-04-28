@@ -5,10 +5,12 @@ import {
 
 import FlightDetails from "../pages/flight-details";
 import Home from "../pages/home";
+import NotFound from "../pages/not-found";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    errorElement: <NotFound />,
     element: (
       <div className="container">
         <Home />

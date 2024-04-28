@@ -7,6 +7,12 @@ const theme = createTheme({
       default: BACKGROUND.MAIN,
     },
   },
+  typography: {
+    h1: {
+      fontSize: 48,
+      fontWeight: 500,
+    },
+  },
   components: {
     MuiTable: {
       styleOverrides: {
