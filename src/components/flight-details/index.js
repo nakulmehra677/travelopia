@@ -5,7 +5,7 @@ import PinDropIcon from "@mui/icons-material/PinDrop";
 import RadarIcon from "@mui/icons-material/Radar";
 import TripOriginIcon from "@mui/icons-material/TripOrigin";
 
-import { Divider, Skeleton, Stack, Typography } from "@mui/material";
+import { Chip, Divider, Skeleton, Stack, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -50,7 +50,9 @@ function FlightDetails({ data, isLoading }) {
             <NumbersIcon color="primary" />
             <Label>Flight Number</Label>
           </Stack>
-          <Value>{flightNumber}</Value>
+          <Value>
+            <Chip label={flightNumber} color="primary" sx={{ width: 80 }} />
+          </Value>
         </Stack>
 
         <Divider />

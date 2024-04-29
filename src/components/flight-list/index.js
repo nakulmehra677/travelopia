@@ -1,4 +1,5 @@
 import {
+  Chip,
   Skeleton,
   Table,
   TableBody,
@@ -130,14 +131,20 @@ function TableFlightList({ data, isLoading, onClick }) {
               }}
               key={index}
             >
-              <TableCell>{row.flightNumber}</TableCell>
+              <TableCell sx={{ fontWeight: "bold" }}>
+                <Chip
+                  label={row.flightNumber}
+                  color="primary"
+                  sx={{ width: 80 }}
+                />
+              </TableCell>
               <TableCell>{row.airline}</TableCell>
               <TableCell>{row.origin}</TableCell>
               <TableCell>{row.destination}</TableCell>
               <TableCell>
                 {new Date(row.departureTime).toLocaleString()}
               </TableCell>
-              <TableCell>{row.status}</TableCell>
+              <TableCell sx={{ fontWeight: "bold" }}>{row.status}</TableCell>
             </TableBodyRow>
           ))}
         </TableBody>
