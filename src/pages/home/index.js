@@ -2,7 +2,7 @@ import { Card, CardContent, Divider, Typography } from "@mui/material";
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
-import TableFlightList from "../../components/table/flight-list";
+import TableFlightList from "../../components/flight-list";
 import useFlightList from "../../hooks/flight-list";
 import ApiErrorProvider from "../../providers/api-error-provider";
 

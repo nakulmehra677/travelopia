@@ -1,24 +1,11 @@
-import { Button, Stack, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 import React from "react";
+import ApiError from "../components/api-error";
 
 function ApiErrorProvider({ children, error, onReload }) {
   if (!error) return children;
 
-  return (
-    <Stack
-      height="100%"
-      width="100%"
-      justifyContent="center"
-      alignItems="center"
-      spacing={2}
-    >
-      <Typography>{error.message}</Typography>
-      <Button onClick={onReload} variant="outlined">
-        Reload
-      </Button>
-    </Stack>
-  );
+  return <ApiError message={error.message} onReload={onReload} />;
 }
 
 ApiErrorProvider.propTypes = {
