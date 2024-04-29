@@ -2,7 +2,7 @@ import {
   RouterProvider as ReactRouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
-import React from 'react';
+import React from "react";
 
 import { Container } from "@mui/material";
 import Header from "../components/header";
