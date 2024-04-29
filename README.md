@@ -65,12 +65,12 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### Explanation:
 
-- **`/src/`**: It is the source directory of the project.
+- **`/src/`**: It is the project's source directory.
   - `index.js`: Source all react components
-  - **`/api/`**: Contains the fetch.js file which is the single source to call api
+  - **`/api/`**: Contains the fetch.js file which is the single source to call API
   - **`/components/`**: Contains the Presentational UI components.
      - **`/*/`**: Name of the component.
-       - `index.js`: Contains the actual code of component.
+       - `index.js`: Contains the actual code of the component.
        - `*.stories.js`: Contains the story of that particular component
        - `*.test.js`: Contains the test cases of that particular component
       
@@ -80,3 +80,15 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
   - **`/styles/`**: Contains files that are required for styling
       - `color.js`: Contains colour codes.
       - `theme.js`: Contains the default props and overridden styles of MUI components
+
+## How to use this app
+
+This app contains two pages
+
+### `/` 
+
+This is the app's home page where the user can see a list of flights and some of their details like flightNumber, airline, origin, destination, departureTime, status in the form of a table. Users can sort the column in ascending/descending order by clicking on the header title of the column. By clicking on each item, the app will redirect the user to the detailed page of that particular flight.
+
+### `/flight-details/*`
+
+This page shows a detailed view of a flight. There is also a button at the bottom through which user can go back to the home page.

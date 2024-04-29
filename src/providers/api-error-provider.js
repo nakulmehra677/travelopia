@@ -10,7 +10,7 @@ function ApiErrorProvider({ children, error, onReload }) {
 
 ApiErrorProvider.propTypes = {
   children: PropTypes.node.isRequired,
-  error: PropTypes.node.isRequired,
+  error: PropTypes.object,
   onReload: PropTypes.func.isRequired,
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import ApiError from "./index";
 
 export default {
-  title: "ApiError",
+  title: "Errors/ApiError",
   component: ApiError,
 };
 
