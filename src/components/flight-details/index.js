@@ -106,7 +106,7 @@ function FlightDetails({ data, isLoading }) {
     );
   }
 
-  return <div>dddd</div>;
+  return null;
 }
 
 FlightDetails.propTypes = {
