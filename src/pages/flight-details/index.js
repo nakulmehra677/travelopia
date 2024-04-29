@@ -6,7 +6,6 @@ import {
   Card,
   CardContent,
   Divider,
-  Skeleton,
   Stack,
   Typography,
 } from "@mui/material";
@@ -34,15 +33,7 @@ export default function PageFlightDetails() {
           <Divider />
           <CardContent>
             <ApiErrorProvider error={error} onReload={handleReload}>
-              {isLoading ? (
-                <Stack spacing={2} id="flight-details-loading">
-                  {[1, 2, 3, 4, 5, 6].map((item) => (
-                    <Skeleton variant="rectangular" height={32} key={item} />
-                  ))}
-                </Stack>
-              ) : (
-                <FlightDetails data={data} />
-              )}
+              <FlightDetails data={data} isLoading={isLoading} />
             </ApiErrorProvider>
           </CardContent>
         </Card>
