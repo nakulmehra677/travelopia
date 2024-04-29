@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material/styles";
-import { BACKGROUND, PRIMARY } from "./color";
+import { BACKGROUND, PRIMARY, SECONDARY } from "./color";
 
 const theme = createTheme({
   palette: {
@@ -32,6 +32,7 @@ const theme = createTheme({
       },
       styleOverrides: {
         root: {
+          backgroundImage: `radial-gradient( circle farthest-corner at 1.9% 6.4%, ${PRIMARY.MAIN} 0%, ${SECONDARY.MAIN} 90% )`,
           boxShadow:
             "0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)",
         },
@@ -43,6 +44,7 @@ const theme = createTheme({
       },
       styleOverrides: {
         root: {
+          backgroundImage: `radial-gradient( circle farthest-corner at 1.9% 6.4%, ${PRIMARY.MAIN} 0%, ${SECONDARY.MAIN} 90% )`,
           textTransform: "none",
           borderRadius: 0,
           paddingLeft: 24,

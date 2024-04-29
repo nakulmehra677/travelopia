@@ -1,3 +1,10 @@
+import DepartureBoardIcon from "@mui/icons-material/DepartureBoard";
+import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
+import NumbersIcon from "@mui/icons-material/Numbers";
+import PinDropIcon from "@mui/icons-material/PinDrop";
+import RadarIcon from "@mui/icons-material/Radar";
+import TripOriginIcon from "@mui/icons-material/TripOrigin";
+
 import { Divider, Skeleton, Stack, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 import React from "react";
@@ -6,7 +13,6 @@ import { styled } from "@mui/material/styles";
 
 const Label = styled(Typography)`
   color: gray;
-  font-size: 18px;
   font-weight: bold;
 `;
 
@@ -40,42 +46,60 @@ function FlightDetails({ data, isLoading }) {
     return (
       <Stack spacing={2} id="flight-details-data">
         <Stack direction="row" justifyContent="space-between" spacing={4}>
-          <Label>Flight Number</Label>
+          <Stack alignItems="center" direction="row" spacing={1}>
+            <NumbersIcon color="primary" />
+            <Label>Flight Number</Label>
+          </Stack>
           <Value>{flightNumber}</Value>
         </Stack>
 
         <Divider />
 
         <Stack direction="row" justifyContent="space-between" spacing={4}>
-          <Label>Airline</Label>
+          <Stack alignItems="center" direction="row" spacing={1}>
+            <FlightTakeoffIcon color="primary" />
+            <Label>Airline</Label>
+          </Stack>
           <Value>{airline}</Value>
         </Stack>
 
         <Divider />
 
         <Stack direction="row" justifyContent="space-between" spacing={4}>
-          <Label>Origin</Label>
+          <Stack alignItems="center" direction="row" spacing={1}>
+            <TripOriginIcon color="primary" />
+            <Label>Origin</Label>
+          </Stack>
           <Value>{origin}</Value>
         </Stack>
 
         <Divider />
 
         <Stack direction="row" justifyContent="space-between" spacing={4}>
-          <Label>Destination</Label>
+          <Stack alignItems="center" direction="row" spacing={1}>
+            <PinDropIcon color="primary" />
+            <Label>Destination</Label>
+          </Stack>
           <Value>{destination}</Value>
         </Stack>
 
         <Divider />
 
         <Stack direction="row" justifyContent="space-between" spacing={4}>
-          <Label>Departure Time</Label>
+          <Stack alignItems="center" direction="row" spacing={1}>
+            <DepartureBoardIcon color="primary" />
+            <Label>Departure Time</Label>
+          </Stack>
           <Value>{new Date(departureTime).toLocaleString()}</Value>
         </Stack>
 
         <Divider />
 
         <Stack direction="row" justifyContent="space-between" spacing={4}>
-          <Label>Status</Label>
+          <Stack alignItems="center" direction="row" spacing={1}>
+            <RadarIcon color="primary" />
+            <Label>Status</Label>
+          </Stack>
           <Value>{status}</Value>
         </Stack>
       </Stack>
