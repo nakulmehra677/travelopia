@@ -33,6 +33,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 All dependencies are listed in the [package.json](https://github.com/nakulmehra677/travelopia/blob/main/package.json) file, which is located in the root folder of the project.
 
+### ESLint
+
+Linting configuration done in [.eslintrc.js](https://github.com/nakulmehra677/travelopia/blob/main/.eslintrc.js) file, which is located in the root folder of the project.
+
+### Prettier
+
+Prettier configuration done in [.prettierrc](https://github.com/nakulmehra677/travelopia/blob/main/.prettierrc) file, which is located in the root folder of the project.
+
 ## Available Scripts
 
 In the project directory, you can run:
