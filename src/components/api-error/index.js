@@ -10,6 +10,7 @@ function ApiError({ message, onReload }) {
       justifyContent="center"
       alignItems="center"
       spacing={2}
+      p={4}
     >
       <Typography id="error-message">{message}</Typography>
       <Button id="error-button" onClick={onReload}>
