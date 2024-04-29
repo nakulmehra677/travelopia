@@ -2,7 +2,8 @@
 
 ## Description
 
-Presidio's front end React application.
+This app show the status of multiple flights.
+Deployed on [https://travelopia2.netlify.app](https://travelopia2.netlify.app)
 
 ### This application uses following technologies -
 
