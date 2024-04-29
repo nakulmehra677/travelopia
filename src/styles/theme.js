@@ -12,6 +12,14 @@ const theme = createTheme({
     },
   },
   typography: {
+    fontFamily: [
+      "Rubik",
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+    ].join(","),
+
     h1: {
       fontSize: 48,
       fontWeight: 500,
