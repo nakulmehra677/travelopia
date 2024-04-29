@@ -14,6 +14,18 @@ function ThemeProvider({ children }) {
         {children}
         <Box
           position="fixed"
+          top={0}
+          left={0}
+          zIndex={-10}
+          sx={{ opacity: 0.8 }}
+          borderTop={`160px solid ${PRIMARY.MAIN}`}
+          borderRight="160px solid transparent"
+          width={0}
+          height="50vw"
+        />
+
+        <Box
+          position="fixed"
           bottom={0}
           right={0}
           zIndex={-10}
