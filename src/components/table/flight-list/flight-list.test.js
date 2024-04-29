@@ -25,10 +25,4 @@ describe("flight-list", () => {
     const cardElement = container.querySelector(".MuiTableBody-root");
     expect(cardElement.firstChild).toBeInTheDocument();
   });
-
-  test("error", () => {
-    const { container } = render(<TableFlightList error={true} />);
-    const cardElement = container.querySelector("#flight-list-error");
-    expect(cardElement).toBeInTheDocument();
-  });
 });

@@ -29,9 +29,23 @@ const theme = createTheme({
         },
       },
     },
+    MuiButton: {
+      defaultProps: {
+        variant: "contained",
+      },
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+          borderRadius: 40,
+          paddingLeft: 24,
+          paddingRight: 24,
+        },
+      },
+    },
     MuiCard: {
       styleOverrides: {
         root: {
+          width: "100%",
           borderRadius: 0,
         },
       },

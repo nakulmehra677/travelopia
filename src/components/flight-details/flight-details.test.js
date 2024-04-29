@@ -19,16 +19,4 @@ describe("flight-details", () => {
     const cardElement = container.querySelector("#flight-details-data");
     expect(cardElement.firstChild).toBeInTheDocument();
   });
-
-  test("loading", () => {
-    const { container } = render(<CardFlightDetails isLoading={true} />);
-    const cardElement = container.querySelector("#flight-details-loading");
-    expect(cardElement).toBeInTheDocument();
-  });
-
-  test("error", () => {
-    const { container } = render(<CardFlightDetails error={true} />);
-    const cardElement = container.querySelector("#flight-details-error");
-    expect(cardElement).toBeInTheDocument();
-  });
 });

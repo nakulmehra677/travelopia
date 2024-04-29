@@ -1,7 +1,4 @@
 import {
-  Card,
-  CardContent,
-  Divider,
   Skeleton,
   Table,
   TableBody,
@@ -10,7 +7,6 @@ import {
   TableHead,
   TableRow,
   TableSortLabel,
-  Typography,
 } from "@mui/material";
 import PropTypes from "prop-types";
 import * as React from "react";
@@ -24,7 +20,7 @@ const TableBodyRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function TableFlightList({ data, isLoading, error, onClick }) {
+function TableFlightList({ data, isLoading, onClick }) {
   const [sortDirection, setSortDirection] = React.useState();
   const [sortedBy, setSortedBy] = React.useState();
   const [list, setList] = React.useState();
@@ -92,14 +88,6 @@ function TableFlightList({ data, isLoading, error, onClick }) {
     setSortedBy(columnId);
   };
 
-  if (error) {
-    return (
-      <Typography textAlign="center" id="flight-list-error">
-        Something went wrong
-      </Typography>
-    );
-  }
-
   const ui = () => {
     if (isLoading) {
       return (
@@ -158,75 +146,69 @@ function TableFlightList({ data, isLoading, error, onClick }) {
   };
 
   return (
-    <Card>
-      <CardContent>
-        <Typography variant="h5">Flight List</Typography>
-      </CardContent>
-      <Divider />
-      <TableContainer sx={{ maxHeight: "75vh" }}>
-        <Table sx={{ minWidth: 700 }} stickyHeader>
-          <TableHead>
-            <TableRow>
-              <TableCell>
-                <TableSortLabel
-                  active={sortedBy === "flightNumber"}
-                  direction={sortDirection}
-                  onClick={() => handleSort("flightNumber")}
-                >
-                  Flight Number
-                </TableSortLabel>
-              </TableCell>
-              <TableCell>
-                <TableSortLabel
-                  active={sortedBy === "airline"}
-                  direction={sortDirection}
-                  onClick={() => handleSort("airline")}
-                >
-                  Airline
-                </TableSortLabel>
-              </TableCell>
-              <TableCell>
-                <TableSortLabel
-                  active={sortedBy === "origin"}
-                  direction={sortDirection}
-                  onClick={() => handleSort("origin")}
-                >
-                  Origin
-                </TableSortLabel>
-              </TableCell>
-              <TableCell>
-                <TableSortLabel
-                  active={sortedBy === "destination"}
-                  direction={sortDirection}
-                  onClick={() => handleSort("destination")}
-                >
-                  Destination
-                </TableSortLabel>
-              </TableCell>
-              <TableCell>
-                <TableSortLabel
-                  active={sortedBy === "departureTime"}
-                  direction={sortDirection}
-                  onClick={() => handleSort("departureTime")}
-                >
-                  Departure Time
-                </TableSortLabel>
-              </TableCell>
-              <TableCell>
-                <TableSortLabel
-                  active={sortedBy === "status"}
-                  direction={sortDirection}
-                  onClick={() => handleSort("status")}
-                >
-                  Status
-                </TableSortLabel>
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          {ui()}
-        </Table>
-      </TableContainer>
-    </Card>
+    <TableContainer sx={{ maxHeight: "75vh" }}>
+      <Table sx={{ minWidth: 700 }} stickyHeader>
+        <TableHead>
+          <TableRow>
+            <TableCell>
+              <TableSortLabel
+                active={sortedBy === "flightNumber"}
+                direction={sortDirection}
+                onClick={() => handleSort("flightNumber")}
+              >
+                Flight Number
+              </TableSortLabel>
+            </TableCell>
+            <TableCell>
+              <TableSortLabel
+                active={sortedBy === "airline"}
+                direction={sortDirection}
+                onClick={() => handleSort("airline")}
+              >
+                Airline
+              </TableSortLabel>
+            </TableCell>
+            <TableCell>
+              <TableSortLabel
+                active={sortedBy === "origin"}
+                direction={sortDirection}
+                onClick={() => handleSort("origin")}
+              >
+                Origin
+              </TableSortLabel>
+            </TableCell>
+            <TableCell>
+              <TableSortLabel
+                active={sortedBy === "destination"}
+                direction={sortDirection}
+                onClick={() => handleSort("destination")}
+              >
+                Destination
+              </TableSortLabel>
+            </TableCell>
+            <TableCell>
+              <TableSortLabel
+                active={sortedBy === "departureTime"}
+                direction={sortDirection}
+                onClick={() => handleSort("departureTime")}
+              >
+                Departure Time
+              </TableSortLabel>
+            </TableCell>
+            <TableCell>
+              <TableSortLabel
+                active={sortedBy === "status"}
+                direction={sortDirection}
+                onClick={() => handleSort("status")}
+              >
+                Status
+              </TableSortLabel>
+            </TableCell>
+          </TableRow>
+        </TableHead>
+        {ui()}
+      </Table>
+    </TableContainer>
   );
 }
 
@@ -241,7 +223,6 @@ TableFlightList.propTypes = {
       status: PropTypes.string.isRequired,
     })
   ),
-  error: PropTypes.bool,
   isLoading: PropTypes.bool,
   onClick: PropTypes.func,
 };

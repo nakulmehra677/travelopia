@@ -1,19 +1,54 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-import { Stack } from "@mui/material";
-import CardFlightDetails from "../../components/cards/flight-details";
+import {
+  Button,
+  Card,
+  CardContent,
+  Divider,
+  Skeleton,
+  Stack,
+  Typography,
+} from "@mui/material";
+import FlightDetails from "../../components/flight-details";
 import useFlightDetails from "../../hooks/flight-details";
+import ApiErrorProvider from "../../providers/api-error-provider";
 
-export default function FlightDetails() {
+export default function PageFlightDetails() {
   const { id } = useParams();
+  const navigate = useNavigate();
 
-  const { data, isLoading, error } = useFlightDetails({ id });
+  const { data, isLoading, error, mutate } = useFlightDetails({ id });
+
+  const handleReload = () => {
+    mutate();
+  };
 
   return (
-    <Stack alignItems="center" spacing={4}>
-      <CardFlightDetails data={data} isLoading={isLoading} error={error} />
-      <Link to="/">Go Home</Link>
+    <Stack alignItems="center">
+      <Stack maxWidth={480} spacing={4} width="100%">
+        <Card>
+          <CardContent>
+            <Typography variant="h5">Flight Details</Typography>
+          </CardContent>
+          <Divider />
+          <CardContent>
+            <ApiErrorProvider error={error} onReload={handleReload}>
+              {isLoading ? (
+                <Stack spacing={2} id="flight-details-loading">
+                  {[1, 2, 3, 4, 5, 6].map((item) => (
+                    <Skeleton variant="rectangular" height={32} key={item} />
+                  ))}
+                </Stack>
+              ) : (
+                <FlightDetails data={data} />
+              )}
+            </ApiErrorProvider>
+          </CardContent>
+        </Card>
+
+        <Button onClick={() => navigate("/")}>Go Home</Button>
+      </Stack>
     </Stack>
   );
 }
