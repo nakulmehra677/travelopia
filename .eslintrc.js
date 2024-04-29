@@ -14,6 +14,11 @@ module.exports = {
     "sourceType": "module"
   },
   "plugins": ["react", "prettier"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
     // Add custom rules here
   }
