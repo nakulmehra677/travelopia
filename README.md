@@ -24,7 +24,7 @@ This page shows a detailed view of a flight. There is also a button at the botto
 - [Storybook](https://storybook.js.org/)
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
-- [SWR]{https://swr.vercel.app}
+- [SWR](https://swr.vercel.app)
 - [React Testing Library](https://testing-library.com/)
 - [Font](https://fonts.google.com/specimen/Rubik)
 
