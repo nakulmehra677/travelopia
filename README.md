@@ -19,7 +19,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Dependencies
 
-All dependencies are listed in the [package.json](https://gitlab.t-3.com/presidio/presidio-web/-/blob/development/package.json) file, which is located in the root folder of the project.
+All dependencies are listed in the [package.json](https://github.com/nakulmehra677/travelopia/blob/main/package.json) file, which is located in the root folder of the project.
 
 ## Available Scripts
 
