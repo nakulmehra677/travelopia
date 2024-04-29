@@ -105,7 +105,7 @@ function TableFlightList({ data, isLoading, error, onClick }) {
       return (
         <TableBody>
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((row) => (
-            <TableRow onClick={(e) => onClick(row.id)} key={row}>
+            <TableRow onClick={() => onClick(row.id)} key={row}>
               <TableCell>
                 <Skeleton />
               </TableCell>
@@ -134,7 +134,7 @@ function TableFlightList({ data, isLoading, error, onClick }) {
       return (
         <TableBody>
           {list.map((row, index) => (
-            <TableBodyRow onClick={(e) => onClick(row.id)} key={index}>
+            <TableBodyRow onClick={() => {if(onClick) onClick(row.id)}} key={index}>
               <TableCell>{row.flightNumber}</TableCell>
               <TableCell>{row.airline}</TableCell>
               <TableCell>{row.origin}</TableCell>
@@ -236,6 +236,7 @@ TableFlightList.propTypes = {
   ),
   error: PropTypes.bool,
   isLoading: PropTypes.bool,
+  onClick: PropTypes.func
 };
 
 export default TableFlightList;

@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import CardFlightDetails from ".";
+import React from 'react';
 
 test("flight-details-data", () => {
   const { container } = render(

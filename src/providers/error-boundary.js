@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import { Component } from "react";
 import PropTypes from "prop-types";
+import React from 'react';
 
 class ErrorBoundary extends Component {
   constructor(props) {

@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import TableFlightList from ".";
+import React from 'react';
 
 test("flight-list-data", () => {
   const { container } = render(
