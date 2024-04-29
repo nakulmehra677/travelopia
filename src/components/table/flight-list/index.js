@@ -12,7 +12,6 @@ import {
   TableSortLabel,
   Typography,
 } from "@mui/material";
-import moment from "moment";
 import PropTypes from "prop-types";
 import * as React from "react";
 
@@ -104,7 +103,7 @@ function TableFlightList({ data, isLoading, error, onClick }) {
   const ui = () => {
     if (isLoading) {
       return (
-        <>
+        <TableBody>
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((row) => (
             <TableRow onClick={(e) => onClick(row.id)} key={row}>
               <TableCell>
@@ -127,26 +126,26 @@ function TableFlightList({ data, isLoading, error, onClick }) {
               </TableCell>
             </TableRow>
           ))}
-        </>
+        </TableBody>
       );
     }
 
     if (list) {
       return (
-        <>
+        <TableBody>
           {list.map((row, index) => (
-            <TableBodyRow onClick={(e) => onClick(row.id)} key={row.id}>
+            <TableBodyRow onClick={(e) => onClick(row.id)} key={index}>
               <TableCell>{row.flightNumber}</TableCell>
               <TableCell>{row.airline}</TableCell>
               <TableCell>{row.origin}</TableCell>
               <TableCell>{row.destination}</TableCell>
               <TableCell>
-                {moment(row.departureTime).format("D MMM, h:mm A")}
+              {new Date(row.departureTime).toLocaleString()}
               </TableCell>
               <TableCell>{row.status}</TableCell>
             </TableBodyRow>
           ))}
-        </>
+        </TableBody>
       );
     }
   };
@@ -217,7 +216,7 @@ function TableFlightList({ data, isLoading, error, onClick }) {
               </TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>{ui()}</TableBody>
+          {ui()}
         </Table>
       </TableContainer>
     </Card>

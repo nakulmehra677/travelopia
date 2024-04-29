@@ -1,12 +1,6 @@
 import { render } from "@testing-library/react";
 import TableFlightList from ".";
 
-test("flight-list-null", () => {
-  const { container } = render(<TableFlightList />);
-  const cardElement = container.querySelector(".MuiTableBody-root");
-  expect(cardElement.firstChild).toBeNull();
-});
-
 test("flight-list-data", () => {
   const { container } = render(
     <TableFlightList

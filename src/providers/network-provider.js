@@ -1,6 +1,7 @@
 import SignalCellularConnectedNoInternet2BarIcon from "@mui/icons-material/SignalCellularConnectedNoInternet2Bar";
 import { Stack, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 function NetworkProvider({ children }) {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
@@ -38,5 +39,9 @@ function NetworkProvider({ children }) {
     </Stack>
   );
 }
+
+NetworkProvider.propTypes = {
+  children: PropTypes.node,
+};
 
 export default NetworkProvider;

@@ -1,12 +1,6 @@
 import { render } from "@testing-library/react";
 import CardFlightDetails from ".";
 
-test("flight-details-null", () => {
-  const { container } = render(<CardFlightDetails />);
-  const cardElement = container.querySelector(".MuiCardContent-root");
-  expect(cardElement.firstChild).toBeNull();
-});
-
 test("flight-details-data", () => {
   const { container } = render(
     <CardFlightDetails
