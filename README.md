@@ -11,7 +11,7 @@ This app contains two pages
 
 ### `/` 
 
-This is the app's home page where the user can see a list of flights and some of their details like flightNumber, airline, origin, destination, departureTime, status in the form of a table. Users can sort the column in ascending/descending order by clicking on the header title of the column. By clicking on each item, the app will redirect the user to the detailed page of that particular flight.
+This is the app's home page where the user can see a list of flights and some of their details like flightNumber, airline, origin, destination, departureTime, status in the form of a table. Users can sort the column in ascending/descending order by clicking on the title of the column. By clicking on each item, the app will redirect the user to the detailed page of that particular flight.
 
 ### `/flight-details/*`
 
