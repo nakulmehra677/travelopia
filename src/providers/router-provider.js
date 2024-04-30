@@ -5,10 +5,10 @@ import {
 import React from "react";
 
 import { Container } from "@mui/material";
-import Header from "../components/header";
-import FlightDetails from "../pages/flight-details";
-import Home from "../pages/home";
-import NotFound from "../pages/not-found";
+import Header from "components/header";
+import FlightDetails from "pages/flight-details";
+import Home from "pages/home";
+import NotFound from "pages/not-found";
 
 const router = createBrowserRouter([
   {

@@ -2,9 +2,9 @@ import { Card, CardContent, Divider, Typography } from "@mui/material";
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
-import TableFlightList from "../../components/flight-list";
-import useFlightList from "../../hooks/flight-list";
-import ApiErrorProvider from "../../providers/api-error-provider";
+import TableFlightList from "components/flight-list";
+import useFlightList from "hooks/flight-list";
+import ApiErrorProvider from "providers/api-error-provider";
 
 export default function Home() {
   const { data, isLoading, error, mutate } = useFlightList();

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-import ApiError from "../components/api-error";
+import ApiError from "components/api-error";
 
 function ApiErrorProvider({ children, error, onReload }) {
   if (!error) return children;

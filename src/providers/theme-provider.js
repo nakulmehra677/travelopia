@@ -3,8 +3,8 @@ import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { PRIMARY } from "../styles/color";
-import theme from "../styles/theme";
+import { PRIMARY } from "styles/color";
+import theme from "styles/theme";
 
 function ThemeProvider({ children }) {
   return (

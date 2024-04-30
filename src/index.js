@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import RouterProvider from "./providers/router-provider";
-import ThemeProvider from "./providers/theme-provider";
-import reportWebVitals from "./reportWebVitals";
-import ErrorBoundary from "./providers/error-boundary";
-import NetworkProvider from "./providers/network-provider";
+import RouterProvider from "providers/router-provider";
+import ErrorBoundary from "providers/error-boundary";
+import NetworkProvider from "providers/network-provider";
+import ThemeProvider from "providers/theme-provider";
+import reportWebVitals from "reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

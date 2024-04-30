@@ -1,15 +1,16 @@
 import DepartureBoardIcon from "@mui/icons-material/DepartureBoard";
-import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
+import AirlinesIcon from "@mui/icons-material/Airlines";
 import NumbersIcon from "@mui/icons-material/Numbers";
 import PinDropIcon from "@mui/icons-material/PinDrop";
 import RadarIcon from "@mui/icons-material/Radar";
 import TripOriginIcon from "@mui/icons-material/TripOrigin";
 
-import { Chip, Divider, Skeleton, Stack, Typography } from "@mui/material";
+import { Box, Chip, Divider, Skeleton, Stack, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 import React from "react";
 
 import { styled } from "@mui/material/styles";
+import { statusColorCodes } from "utils/constants";
 
 const Label = styled(Typography)`
   color: gray;
@@ -59,7 +60,7 @@ function FlightDetails({ data, isLoading }) {
 
         <Stack direction="row" justifyContent="space-between" spacing={4}>
           <Stack alignItems="center" direction="row" spacing={1}>
-            <FlightTakeoffIcon color="primary" />
+            <AirlinesIcon color="primary" />
             <Label>Airline</Label>
           </Stack>
           <Value>{airline}</Value>
@@ -102,7 +103,18 @@ function FlightDetails({ data, isLoading }) {
             <RadarIcon color="primary" />
             <Label>Status</Label>
           </Stack>
-          <Value>{status}</Value>
+          <Value>
+            {" "}
+            <Stack direction="row" alignItems="center" spacing={1}>
+              <Box
+                borderRadius={20}
+                width={10}
+                height={10}
+                bgcolor={statusColorCodes[status]}
+              />
+              <Typography fontWeight="bold">{status}</Typography>
+            </Stack>
+          </Value>
         </Stack>
       </Stack>
     );

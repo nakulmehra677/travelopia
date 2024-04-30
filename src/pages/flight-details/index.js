@@ -9,9 +9,10 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import FlightDetails from "../../components/flight-details";
-import useFlightDetails from "../../hooks/flight-details";
-import ApiErrorProvider from "../../providers/api-error-provider";
+
+import FlightDetails from "components/flight-details";
+import useFlightDetails from "hooks/flight-details";
+import ApiErrorProvider from "providers/api-error-provider";
 
 export default function PageFlightDetails() {
   const { id } = useParams();

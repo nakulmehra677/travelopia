@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
-import NetworkError from "../components/network-error";
+import NetworkError from "components/network-error";
 
 function NetworkProvider({ children }) {
   const [isOnline, setIsOnline] = useState(navigator.onLine);

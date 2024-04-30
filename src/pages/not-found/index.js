@@ -1,6 +1,7 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
-import PageNotFound from "../../components/page-not-found";
+import React from "react";
+
+import PageNotFound from "components/page-not-found";
 
 export default function NotFound() {
   const navigate = useNavigate();

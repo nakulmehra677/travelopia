@@ -1,6 +1,8 @@
 import {
+  Box,
   Chip,
   Skeleton,
+  Stack,
   Table,
   TableBody,
   TableCell,
@@ -8,11 +10,13 @@ import {
   TableHead,
   TableRow,
   TableSortLabel,
+  Typography,
 } from "@mui/material";
 import PropTypes from "prop-types";
 import * as React from "react";
 
 import { styled } from "@mui/material/styles";
+import { statusColorCodes } from "../../utils/constants";
 
 const TableBodyRow = styled(TableRow)(({ theme }) => ({
   cursor: "pointer",
@@ -144,7 +148,17 @@ function TableFlightList({ data, isLoading, onClick }) {
               <TableCell>
                 {new Date(row.departureTime).toLocaleString()}
               </TableCell>
-              <TableCell sx={{ fontWeight: "bold" }}>{row.status}</TableCell>
+              <TableCell>
+                <Stack direction="row" alignItems="center" spacing={1}>
+                  <Box
+                    borderRadius={20}
+                    width={10}
+                    height={10}
+                    bgcolor={statusColorCodes[row.status]}
+                  />
+                  <Typography fontWeight="bold">{row.status}</Typography>
+                </Stack>
+              </TableCell>
             </TableBodyRow>
           ))}
         </TableBody>
