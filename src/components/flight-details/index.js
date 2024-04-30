@@ -104,7 +104,6 @@ function FlightDetails({ data, isLoading }) {
             <Label>Status</Label>
           </Stack>
           <Value>
-            {" "}
             <Stack direction="row" alignItems="center" spacing={1}>
               <Box
                 borderRadius={20}

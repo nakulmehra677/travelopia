@@ -42,6 +42,10 @@ Linting configuration done in [.eslintrc.js](https://github.com/nakulmehra677/tr
 
 Prettier configuration done in [.prettierrc](https://github.com/nakulmehra677/travelopia/blob/main/.prettierrc) file, which is located in the root folder of the project.
 
+### JSConfig
+
+Javascript settings can be configured in [jsconfig.json](https://github.com/nakulmehra677/travelopia/blob/main/jsconfig.json) file, which is located in the root folder of the project.
+
 ## Available Scripts
 
 In the project directory, you can run:
